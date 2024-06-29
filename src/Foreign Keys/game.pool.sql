@@ -7,14 +7,13 @@ BEGIN
 			information_schema.referential_constraints
 		WHERE
 			constraint_name = 'fk_pool_league'
-	)
-	BEGIN
+	) THEN
 		ALTER TABLE
 			game.pool
 		ADD CONSTRAINT
 			fk_pool_league
 		FOREIGN KEY (league_id)
-		REFERENCES game.pool (id);
-	END;
+		REFERENCES game.league (id);
+	END IF;
 END;
 $$;

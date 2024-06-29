@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS game.venue (
 	PRIMARY KEY(id)
 );
 
-CREATE INDEX ix_venue__source_id ON game.venue (source_id);
+CREATE INDEX IF NOT EXISTS ix_venue__source_id ON game.venue (source_id);

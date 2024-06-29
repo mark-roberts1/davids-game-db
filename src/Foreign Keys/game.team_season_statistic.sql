@@ -7,15 +7,14 @@ BEGIN
 			information_schema.referential_constraints
 		WHERE
 			constraint_name = 'fk_team_season_statistic_team'
-	)
-	BEGIN
+	) THEN
 		ALTER TABLE
 			game.team_season_statistic
 		ADD CONSTRAINT
 			fk_team_season_statistic_team
 		FOREIGN KEY (team_id)
 		REFERENCES game.team (id);
-	END;
+	END IF;
 
 	IF NOT EXISTS (
 		SELECT
@@ -24,14 +23,13 @@ BEGIN
 			information_schema.referential_constraints
 		WHERE
 			constraint_name = 'fk_team_season_statistic_statistic'
-	)
-	BEGIN
+	) THEN
 		ALTER TABLE
 			game.team_season_statistic
 		ADD CONSTRAINT
 			fk_team_season_statistic_statistic
 		FOREIGN KEY (statistic_id)
 		REFERENCES game.statistic (id);
-	END;
+	END IF;
 END;
 $$;

@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS game.user (
 	PRIMARY KEY(id)
 );
 
-CREATE INDEX ix_user__identity_provider_id__external_id ON game.user (identity_provider_id, external_id);
+CREATE INDEX IF NOT EXISTS ix_user__identity_provider_id__external_id ON game.user (identity_provider_id, external_id);

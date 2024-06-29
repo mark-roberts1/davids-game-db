@@ -5,4 +5,4 @@ CREATE TABLE IF NOT EXISTS game.list (
 	PRIMARY KEY (id)
 );
 
-CREATE INDEX ix_list__user_pool_id ON game.list (user_pool_id);
+CREATE INDEX IF NOT EXISTS ix_list__user_pool_id ON game.list (user_pool_id);

@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS game.league (
 	PRIMARY KEY (id)
 );
 
-CREATE INDEX ix_league__source_id ON game.league (source_id);
+CREATE INDEX IF NOT EXISTS ix_league__source_id ON game.league (source_id);

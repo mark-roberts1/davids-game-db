@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS game.pool (
 	PRIMARY KEY(id)
 );
 
-CREATE INDEX ix_pool__discord_server_id ON game.user (discord_server_id);
+CREATE INDEX IF NOT EXISTS ix_pool__discord_server_id ON game.pool (discord_server_id);

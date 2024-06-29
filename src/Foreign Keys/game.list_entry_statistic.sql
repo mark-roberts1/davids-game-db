@@ -7,15 +7,14 @@ BEGIN
 			information_schema.referential_constraints
 		WHERE
 			constraint_name = 'fk_list_entry_statistic_list_entry'
-	)
-	BEGIN
+	) THEN
 		ALTER TABLE
 			game.list_entry_statistic
 		ADD CONSTRAINT
 			fk_list_entry_statistic_list_entry
 		FOREIGN KEY (list_entry_id)
 		REFERENCES game.list_entry (id);
-	END;
+	END IF;
 
 	IF NOT EXISTS (
 		SELECT
@@ -24,14 +23,13 @@ BEGIN
 			information_schema.referential_constraints
 		WHERE
 			constraint_name = 'fk_list_entry_statistic_statistic'
-	)
-	BEGIN
+	) THEN
 		ALTER TABLE
 			game.list_entry_statistic
 		ADD CONSTRAINT
 			fk_list_entry_statistic_statistic
 		FOREIGN KEY (statistic_id)
 		REFERENCES game.statistic (id);
-	END;
+	END IF;
 END;
 $$;

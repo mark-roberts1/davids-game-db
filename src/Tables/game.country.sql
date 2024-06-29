@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS game.country (
 	PRIMARY KEY(id)
 );
 
-CREATE INDEX ix_country__name ON game.country (name);
+CREATE INDEX IF NOT EXISTS ix_country__name ON game.country (name);
