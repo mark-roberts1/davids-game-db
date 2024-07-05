@@ -13,7 +13,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_user_identity_provider
 		FOREIGN KEY (identity_provider_id)
-		REFERENCES game.identity_provider (id);
+		REFERENCES game.identity_provider (id)
+		ON DELETE CASCADE;
 	END IF;
 END;
 $$;

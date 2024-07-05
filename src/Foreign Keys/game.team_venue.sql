@@ -13,7 +13,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_team_venue_team
 		FOREIGN KEY (team_id)
-		REFERENCES game.team (id);
+		REFERENCES game.team (id)
+		ON DELETE CASCADE;
 	END IF;
 
 	IF NOT EXISTS (
@@ -29,7 +30,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_team_venue_venue
 		FOREIGN KEY (venue_id)
-		REFERENCES game.venue (id);
+		REFERENCES game.venue (id)
+		ON DELETE CASCADE;
 	END IF;
 END;
 $$;

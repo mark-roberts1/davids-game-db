@@ -13,7 +13,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_team_season_league_team
 		FOREIGN KEY (team_id)
-		REFERENCES game.team (id);
+		REFERENCES game.team (id)
+		ON DELETE CASCADE;
 	END IF;
 
 	IF NOT EXISTS (
@@ -29,7 +30,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_team_season_league_league
 		FOREIGN KEY (league_id)
-		REFERENCES game.league (id);
+		REFERENCES game.league (id)
+		ON DELETE CASCADE;
 	END IF;
 END;
 $$;

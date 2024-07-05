@@ -13,7 +13,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_list_entry_statistic_list_entry
 		FOREIGN KEY (list_entry_id)
-		REFERENCES game.list_entry (id);
+		REFERENCES game.list_entry (id)
+		ON DELETE CASCADE;
 	END IF;
 
 	IF NOT EXISTS (
@@ -29,7 +30,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_list_entry_statistic_statistic
 		FOREIGN KEY (statistic_id)
-		REFERENCES game.statistic (id);
+		REFERENCES game.statistic (id)
+		ON DELETE CASCADE;
 	END IF;
 END;
 $$;

@@ -13,7 +13,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_pool_league
 		FOREIGN KEY (league_id)
-		REFERENCES game.league (id);
+		REFERENCES game.league (id)
+		ON DELETE CASCADE;
 	END IF;
 END;
 $$;

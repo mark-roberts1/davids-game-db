@@ -13,7 +13,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_user_pool_user
 		FOREIGN KEY (user_id)
-		REFERENCES game.user (id);
+		REFERENCES game.user (id)
+		ON DELETE CASCADE;
 	END IF;
 
 	IF NOT EXISTS (
@@ -29,7 +30,8 @@ BEGIN
 		ADD CONSTRAINT
 			fk_user_pool_pool
 		FOREIGN KEY (pool_id)
-		REFERENCES game.pool (id);
+		REFERENCES game.pool (id)
+		ON DELETE CASCADE;
 	END IF;
 END;
 $$;
