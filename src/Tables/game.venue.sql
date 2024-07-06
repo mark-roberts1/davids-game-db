@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS game.venue (
 	id bigserial not null,
 	name character varying not null,
 	capacity integer,
-	surface smallint,
+	surface_type_id smallint,
 	image_link character varying,
 	source_id bigint,
 	PRIMARY KEY(id)

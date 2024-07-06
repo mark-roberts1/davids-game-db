@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS game.league (
 	id serial not null,
 	name character varying not null,
-	type smallint not null,
+	league_type_id smallint not null,
 	logo_link character varying,
 	country_id smallint,
 	source_id bigint,
